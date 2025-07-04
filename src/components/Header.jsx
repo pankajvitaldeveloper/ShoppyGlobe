@@ -41,7 +41,7 @@ const Header = () => {
           </Link>
           <Link
             to="/cart"
-            className="block px-4 py-2 text-gray-700 hover:text-blue-600 font-medium flex items-center gap-1"
+            className="flex px-4 py-2 text-gray-700 hover:text-blue-600 font-medium  items-center gap-1"
             onClick={() => setMenuOpen(false)}
           >
             <FiShoppingCart className="w-5 h-5" />
