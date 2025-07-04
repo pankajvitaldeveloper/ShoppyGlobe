@@ -1,1 +1,4 @@
 @import "tailwindcss";
+.page-mt {
+    margin-top: 3.5rem;
+}

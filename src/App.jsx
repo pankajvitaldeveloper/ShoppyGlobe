@@ -1,25 +1,24 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import About from './pages/About';
-import Home from './pages/Home';
-import Contact from './pages/Contact';
-import Services from './pages/Services';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import React, { Suspense } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Header from "./components/Header";
+import AppRoutes from "./routes/Routes";
+import Footer from "./components/Footer";
 
-const App = () => {
-  return (
-    <BrowserRouter>
+const App = () => (
+  <Router>
     <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
-  )
-}
+    <ToastContainer
+      position="top-right"
+      autoClose={2000}
+      hideProgressBar={false}
+    />
+    <Suspense fallback={<div>Loading...</div>}>
+      <AppRoutes />
+    </Suspense>
+    <Footer />
+  </Router>
+);
 
-export default App
+export default App;
