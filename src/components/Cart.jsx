@@ -3,6 +3,7 @@ import CartItem from './CartItem';
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const items = useSelector((state) => state.cart.items);
@@ -41,6 +42,16 @@ const Cart = () => {
               </motion.div>
             ))}
           </AnimatePresence>
+        </div>
+      )}
+      {items.length > 0 && (
+        <div className="flex justify-end mt-6">
+          <Link
+            to="/checkout"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded transition-colors duration-200"
+          >
+            Proceed to Checkout
+          </Link>
         </div>
       )}
     </div>
