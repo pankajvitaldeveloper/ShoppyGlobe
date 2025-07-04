@@ -5,9 +5,11 @@ import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header";
 import AppRoutes from "./routes/Routes";
 import Footer from "./components/Footer";
+import ScrollTop from "./components/ScrollTop";
 
 const App = () => (
   <Router>
+    <ScrollTop />
     <Header />
     <ToastContainer
       position="top-right"
