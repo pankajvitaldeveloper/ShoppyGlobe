@@ -1,8 +1,9 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
 
@@ -27,7 +28,12 @@ const ProductDetail = () => {
         <h2 className="text-3xl font-bold text-blue-700 mb-3">{product.title}</h2>
         <p className="text-gray-700 mb-4">{product.description}</p>
         <p className="text-2xl font-semibold text-blue-600 mb-6">${product.price}</p>
-        {/* You can add Add to Cart button here if needed */}
+        <button
+          onClick={() => navigate(-1)}
+          className="mt-4 cursor-pointer px-6 py-2 bg-gray-200 hover:bg-gray-300 text-blue-700 font-semibold rounded transition-colors duration-200"
+        >
+          Back
+        </button>
       </div>
     </div>
   );
